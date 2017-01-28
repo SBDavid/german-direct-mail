@@ -1,7 +1,7 @@
 <template>
   <div class="root-container">
     <router-view keep-alive></router-view>
-    <bMenu v-show=showMenu></bMenu>
+    <bMenu class="menu" v-show=showMenu></bMenu>
   </div>
 </template>
 
@@ -26,9 +26,16 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style style rel="stylesheet/scss" lang="scss" scoped>
 
   .root-container {
+    width: 100%;
+  }
+
+  .menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
   }
 </style>
