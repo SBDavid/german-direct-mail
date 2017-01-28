@@ -29,5 +29,6 @@ export default {
     height: 40px;
     background-color: #fff;
     border-top: 1px solid #dddddd;
+    outline: 0;
   }
 </style>
