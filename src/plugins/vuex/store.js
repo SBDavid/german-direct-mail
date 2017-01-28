@@ -2,7 +2,10 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import middlewares from './middlewares';
 
+import bus from './modules/bus';
+
 Vue.use(Vuex);
+
 
 export default new Vuex.Store({
   // 严格模式下，只能使用mutation改变state，否则会报错
@@ -11,6 +14,6 @@ export default new Vuex.Store({
   plugins: middlewares,
   // 模块组装
   modules: {
-
+    bus,
   },
 });

@@ -24,6 +24,10 @@ module.exports = {
       'js': 'never',
       'vue': 'never'
     }],
+    'import/no-unresolved': 0,
+    'linebreak-style': 0,
+    'new-cap': 0,
+    'max-len': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
