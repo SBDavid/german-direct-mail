@@ -2,7 +2,7 @@
   <div class="container">
     <!--搜索栏-->
     <searchInput class="search-input"></searchInput>
-    <router-view class="root-container" keep-alive></router-view>
+    <router-view class="root-container" v-bind:class="{ 'margin-top':showSearch, 'margin-bottom':showMenu }" keep-alive></router-view>
     <bMenu class="menu" v-show=showMenu></bMenu>
   </div>
 </template>
@@ -20,6 +20,9 @@ export default {
     showMenu() {
       return this.$store.state.bus.menu.show;
     },
+    showSearch() {
+      return this.$store.state.bus.search.show;
+    },
   },
   components: {
     bMenu,
@@ -36,7 +39,6 @@ export default {
   }
 
   .root-container {
-    margin-top: 50px;
   }
 
   .search-input {
@@ -51,5 +53,13 @@ export default {
     left: 0;
     bottom: 0;
     width: 100%;
+  }
+
+  .margin-top {
+    margin-top: 50px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 40px;
   }
 </style>

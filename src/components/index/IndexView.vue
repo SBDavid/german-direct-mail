@@ -4,7 +4,9 @@
     <div>
       <!--分类-->
       <div class="catalog-container">
-        <catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" />
+        <div class="catalog-slider">
+          <catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" />
+        </div>
       </div>
       <!--文章类表-->
       <div class="article-container">
@@ -55,10 +57,16 @@ export default {
   .catalog-container {
     height: 120px;
     width: 100%;
+    overflow: hidden;
+  }
+
+  .catalog-slider {
+    width: auto;
+    white-space: nowrap;
   }
 
   .catalog {
-    width: 25% !important;
+    width: 90px !important;
     display: inline-block;
   }
 

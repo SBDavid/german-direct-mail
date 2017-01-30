@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <input placeholder="搜索"/>
+    <div class="input" >
+      <input placeholder="搜索">
+    </div>
   </div>
 </template>
 
@@ -29,15 +31,23 @@ export default {
     position: relative;
   }
 
-  .container input {
+  .container .input {
     position: absolute;
     top: 9px;
     left: 9px;
+    right: 9px;
     border: 0;
     border-radius: 5px;
-    padding-left: 10px;
-    width: 92%;
+    padding-left: 7px;
     height: 30px;
+    outline: 0;
+    background-color: $common-white;
+  }
+
+  .container input {
+    border: 0;
+    width: 100%;
+    margin-top: 7px;
     outline: 0;
   }
 </style>

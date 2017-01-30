@@ -17,19 +17,28 @@ export const router = new Router({
         {
           path: '/index',
           name: 'index',
-          meta: { showMenu : true },
+          meta: {
+            showMenu: true,
+            showSearch: true,
+          },
           component: resolve => require(['../components/index/IndexView.vue'], resolve),
         },
         {
           path: '/service',
           name: 'service',
-          meta: { showMenu : true },
+          meta: {
+            showMenu: true,
+            showSearch: true,
+          },
           component: resolve => require(['../components/Hello.vue'], resolve),
         },
         {
           path: '*',
           component: resolve => require(['../components/index/IndexView.vue'], resolve),
-          meta: { showMenu : true },
+          meta: {
+            showMenu: true,
+            showSearch: true,
+          },
         },
       ],
     },
@@ -42,6 +51,12 @@ router.beforeEach((to, from, next) => {
   }
   else {
     store.commit({ type: 'mHideMenu' });
+  }
+  if (to.matched.some(record => record.meta.showSearch)) {
+    store.commit({ type: 'mShowSearch' });
+  }
+  else {
+    store.commit({ type: 'mHideSearch' });
   }
   next();
 })
