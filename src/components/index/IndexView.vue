@@ -1,9 +1,5 @@
 <template>
   <div >
-    <!--搜索栏-->
-    <searchInput></searchInput>
-    <!--搜索提示-->
-    <div v-if=false></div>
     <!-- content -->
     <div>
       <!--分类-->
@@ -11,14 +7,21 @@
         <catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" /><catalog class="catalog" />
       </div>
       <!--文章类表-->
+      <div class="article-container">
+        <div class="article-list-title">热门推荐</div>
+        <articleListItem v-for="(article, index) in gHotArticles" v-bind:article=article v-on:articleSelected=articleSelected></articleListItem>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 
+import { mapGetters } from 'vuex';
+
 import searchInput from './SearchInput';
 import catalog from './Catalog';
+import articleListItem from './ArticleListItem';
 
 export default {
   data() {
@@ -28,11 +31,26 @@ export default {
   components: {
     searchInput,
     catalog,
+    articleListItem,
+  },
+  computed: {
+    ...mapGetters({
+      gHotArticles: 'gHotArticles',
+    }),
+  },
+  methods: {
+    articleSelected(article) {
+      /* eslint-disable no-undef */
+      window.location.href = article.url;
+    },
   },
 };
 </script>
 
 <style style rel="stylesheet/scss" lang="scss" scoped>
+
+  @import "../../assets/style/base";
+  @import "../../assets/style/color";
 
   .catalog-container {
     height: 120px;
@@ -42,5 +60,11 @@ export default {
   .catalog {
     width: 25% !important;
     display: inline-block;
+  }
+
+  .article-list-title {
+    border-top: 1px solid $line-gray;
+    border-bottom: 1px solid $line-gray;
+    padding: 6px;
   }
 </style>

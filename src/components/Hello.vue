@@ -1,12 +1,14 @@
 <template>
-  <div class="root-container">
-    <router-view keep-alive></router-view>
+  <div class="container">
+    <!--搜索栏-->
+    <searchInput class="search-input"></searchInput>
+    <router-view class="root-container" keep-alive></router-view>
     <bMenu class="menu" v-show=showMenu></bMenu>
   </div>
 </template>
 
 <script>
-
+import searchInput from './index/SearchInput';
 import bMenu from './menu/BottomMenu';
 
 export default {
@@ -21,6 +23,7 @@ export default {
   },
   components: {
     bMenu,
+    searchInput,
   },
 };
 </script>
@@ -28,8 +31,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style style rel="stylesheet/scss" lang="scss" scoped>
 
-  .root-container {
+  .container {
     width: 100%;
+  }
+
+  .root-container {
+    margin-top: 50px;
+  }
+
+  .search-input {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 50px !important;
   }
 
   .menu {

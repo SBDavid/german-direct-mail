@@ -1,6 +1,8 @@
+@import './font';
 button, div {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "Microsoft YaHei";
+  font-size: $font-size-m;
 }

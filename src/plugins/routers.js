@@ -28,7 +28,8 @@ export const router = new Router({
         },
         {
           path: '*',
-          component: resolve => require(['../components/common/404.vue'], resolve),
+          component: resolve => require(['../components/index/IndexView.vue'], resolve),
+          meta: { showMenu : true },
         },
       ],
     },

@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import middlewares from './middlewares';
 
 import bus from './modules/bus';
+import business from './modules/business';
 
 Vue.use(Vuex);
 
@@ -15,5 +16,6 @@ export default new Vuex.Store({
   // 模块组装
   modules: {
     bus,
+    business,
   },
 });
