@@ -66,7 +66,7 @@ export default {
   }
 
   .catalog {
-    width: 90px !important;
+    width: 6.6rem !important;
     display: inline-block;
   }
 

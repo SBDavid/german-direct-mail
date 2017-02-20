@@ -1,7 +1,7 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class="container">
     <img class="pic" v-bind:src=picUrl />
-    <div>{{title}}</div>
+    <div class="title">{{title}}</div>
   </div>
 </template>
 
@@ -31,6 +31,7 @@ export default {
 <style style rel="stylesheet/scss" lang="scss" scoped>
 
   @import "../../assets/style/base";
+  @import "../../assets/style/font";
 
   .container {
     width: 100%;
@@ -41,5 +42,9 @@ export default {
   .pic {
     height: 60px;
     margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: $font-size-m-rem;
   }
 </style>
